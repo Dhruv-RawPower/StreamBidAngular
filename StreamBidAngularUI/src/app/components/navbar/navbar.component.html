@@ -1,0 +1,49 @@
+
+
+<mat-toolbar  color="primary">
+    <span  routerLink="/"><img src="/assets/images/SSMlogo.png" class="navbarImage">StreamBid</span>
+    <ng-container *ngFor="let item of menuItems">
+      <button mat-button  
+        id = "{{item.id}}"
+        *ngIf = "item.logged"
+        
+        routerLink="{{item.path}}"
+        class="mr fire"
+        (click)="item.function">
+        <mat-icon>{{item.icon}}</mat-icon>
+        {{item.label}}
+    </button>
+    </ng-container>
+    
+    <button #logout mat-button  
+        
+        *ngIf = "loggedIn"
+        
+        class="mr fire"
+        (click)="logoutUser()">
+        <mat-icon>lock</mat-icon>
+        Logout
+    </button>
+   
+  
+  
+  
+  
+  
+    <ng-container>
+        <button mat-icon-button [matMenuTriggerFor]="dropMenu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #dropMenu="matMenu">
+            <ng-container *ngFor="let item of menuItems">
+                <div>
+                    <button mat-menu-item>
+                        <mat-icon class="mr fire" routerLink="{{item.path}}">{{item.icon}}</mat-icon>
+                        {{item.label}}
+                    </button>
+                    <mat-divider></mat-divider>
+                </div>
+            </ng-container>
+        </mat-menu>
+    </ng-container>
+  </mat-toolbar>

@@ -6,8 +6,7 @@ import { LoginService } from '../login/login.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService implements CanActivate{
-
+export class AuthGuard implements CanActivate {
   constructor(private loginService:LoginService, private router:Router)
   {
 
@@ -28,4 +27,5 @@ export class AuthService implements CanActivate{
       return false;
       }
   }
+  
 }
