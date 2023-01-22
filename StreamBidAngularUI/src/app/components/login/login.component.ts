@@ -32,18 +32,19 @@ export class LoginComponent  implements OnInit{
     console.log("form is submitted");
     if((this.credentials.username!="" && this.credentials.password!="") && (this.credentials.username!=null && this.credentials.password!=null ))
     {
-      console.log("Credentials are ok, api call made");
+
       this.loginService.doLogin(this.credentials).subscribe(
         (response:any)=>{
-          console.log(response.token);
+          
+          console.log(response);
 
           this.loginService.loginUser(response.token)
           this.loginValid=true;
           window.location.href="dashboard";
         },
         error=>{
-          this.loginValid = false;
-          console.log(error);
+          //this.loginValid = false;
+          console.log("error hai re");
           
         }
       );
