@@ -25,6 +25,8 @@ import { AuthGuard } from './services/auth/auth.guard';
 
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RegisterService } from './services/register/register.service';
+import { RegisterComponent } from './components/register/register.component';
 
 
 
@@ -36,7 +38,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FontAwesomeModule 
 
   ],
-  providers: [LoginService, AuthGuard,[{provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor,multi:true}]],
+  providers: [LoginService, RegisterService, AuthGuard,[{provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor,multi:true}]],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

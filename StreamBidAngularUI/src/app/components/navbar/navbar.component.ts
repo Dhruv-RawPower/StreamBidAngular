@@ -28,7 +28,7 @@ export class NavbarComponent implements OnInit,AfterViewInit  {
   
   menuItems: MenuItem[] = [
     {
-      label: 'Sign Up',
+      label: 'Sign In',
       icon: 'login',
       showOnMobile: true,
       showOnTablet: true,
@@ -37,28 +37,6 @@ export class NavbarComponent implements OnInit,AfterViewInit  {
       logged: true,
       function: '',
       id: "sign" 
-    },
-    {
-      label: 'About',
-      icon: 'help',
-      showOnMobile: false,
-      showOnTablet: true,
-      showOnDesktop: true,
-      path:"about",
-      logged: true,
-      function: '',
-      id: "about" 
-    },
-    {
-      label: 'Tickets',
-      icon: 'attach_money',
-      showOnMobile: false,
-      showOnTablet: false,
-      showOnDesktop: true,
-      path:"tickets",
-      logged: true,
-      function: '',
-      id: "ticket" 
     },
     {
       label: 'Dashboard',
@@ -72,27 +50,17 @@ export class NavbarComponent implements OnInit,AfterViewInit  {
       id: "dashboard" 
     },
     {
-      label: 'Showcase',
-      icon: 'slideshow',
-      showOnMobile: false,
-      showOnTablet: false,
+      label: 'Sign Up',
+      icon: 'login',
+      showOnMobile: true,
+      showOnTablet: true,
       showOnDesktop: true,
-      path : "showcase",
+      path: "register",
       logged: true,
       function: '',
-      id: "showcase" 
+      id: "register" 
     },
-    {
-      label: 'Blog',
-      icon: 'rss_feed',
-      showOnMobile: false,
-      showOnTablet: false,
-      showOnDesktop: false,
-      path:"",
-      logged: true,
-      function: '',
-      id: "blog" 
-    },
+   
     
   ];
 

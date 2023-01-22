@@ -1,0 +1,36 @@
+<div class = "container">
+    <form (ngSubmit)="onSubmit()">
+       <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Username</mat-label>
+          <input [(ngModel)]="credentials.userName" name="userName" required type ="text" matInput  />
+       </mat-form-field>
+    
+       <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input [(ngModel)]="credentials.password" name="password" required type="password" matInput  />
+       </mat-form-field>
+
+       <mat-form-field class="full-width" appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input [(ngModel)]="credentials.firstName" name="firstName" required type="text" matInput  />
+       </mat-form-field>
+
+       <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input [(ngModel)]="credentials.lastName" name="lastName" required type="text" matInput  />
+       </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input [(ngModel)]="credentials.email" name="email" required type="text" matInput  />
+        </mat-form-field>
+
+       <div class="buttonClass">
+          <button type="submit" mat-raised-button color="primary">Sign-Up</button>
+          <button type="reset" mat-raised-button color="accent">Reset</button>
+       </div>
+       
+       
+         
+    </form>
+</div>

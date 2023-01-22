@@ -12,7 +12,7 @@ constructor(private http: HttpClient) { }
 doLogin(credentials: any){
  
  // const headers = new HttpHeaders(})
-  return this.http.post(`${this.url}/authenticate`,credentials);
+  return this.http.post(`${this.url}/token`,credentials);
 
 }
 
