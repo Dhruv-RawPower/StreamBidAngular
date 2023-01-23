@@ -1,1 +1,23 @@
-<p>dashboard works!</p>
+<h2>Hey there, start chatting!</h2>
+
+<h3></h3>
+
+<table class="table table-striped table-bordered">    
+    <thead>
+        Select a friend to chat          
+    </thead>    
+    <tbody>
+        <tr>    
+            <th>First name</th>        
+            <th>Last name</th>        
+        </tr>   
+         <tr *ngFor="let friend of chatFriends" (click)="openChatRoom(friend.id)">    
+          <th>    
+            {{friend.firstName}}       
+          </th>
+          <th>    
+            {{friend.lastName}}       
+          </th>      
+        </tr>        
+    </tbody>    
+</table>

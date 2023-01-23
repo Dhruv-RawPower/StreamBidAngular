@@ -91,13 +91,12 @@ export class NavbarComponent implements OnInit,AfterViewInit  {
   }
   ngAfterViewInit(): void {
     
-    console.log("GG 2",this.mydiv2);
-   
+    
     var element = document.getElementById('sign');
     console.log("Boolean ",this.loggedIn)
     if(this.loggedIn)
     {
-      //element.remove();
+    element.remove();
     
     }
     

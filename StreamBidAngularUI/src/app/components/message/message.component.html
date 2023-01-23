@@ -1,0 +1,82 @@
+
+<script src="assets/js/socks.min.js"></script>
+<script src="assets/js/stomp.min.js"></script>
+<script src="assets/js/scanner.js"></script>
+
+<div class="container-fluid"  role="main" class="colors">
+  <h2  *ngIf="messageService.chatUser as user">{{user}}</h2>
+
+    <div *ngFor="let msg of messageService.msg">
+    <div *ngIf="msg.mainUser; then thenBlock else elseBlock">
+  
+    </div>
+    
+    
+     <ng-template #thenBlock>
+      <div class="container" >
+        <img src="/w3images/bandmember.jpg" alt="Avatar" style="width:100%;">
+          <div>
+            <p>{{msg.message}} in true</p>
+            <span class="time-left">{{msg.date}}</span>
+          </div>  
+      </div>
+      </ng-template>
+      
+      <ng-template #elseBlock>
+        <div class="container darker">
+          <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right" style="width:100%;">
+          <div>
+            <p>{{msg.message}} in false</p>
+            <span class="time-right">{{msg.date}}</span>
+          </div>
+        </div>
+     </ng-template>
+    </div>
+
+
+
+  <input class="form-control" type="text" placeholder="message" [(ngModel)]="input">
+  <button class="btn btn-success" (click)="sendMessage()">Send</button>
+</div>
+
+
+<!--
+<div class="container"  role="main" class="d-flex justify-content-center">
+  
+  <div *ngFor="let msg of messageService.msg">
+  <div *ngIf="msg.mainUser; then thenBlock else elseBlock">
+
+  </div>
+  </div>
+  
+   <ng-template #thenBlock>
+    <div class="container" >
+      <img src="/w3images/bandmember.jpg" alt="Avatar" style="width:100%;">
+        <div *ngFor="let msg of messageService.msg">
+          <p>{{msg.message}} in true</p>
+          <span class="time-left">{{msg.date}}</span>
+        </div>  
+    </div>
+    </ng-template>
+    
+    <ng-template #elseBlock>
+      <div class="container darker">
+        <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right" style="width:100%;">
+        <div *ngFor="let msg of messageService.msg">
+          <p>{{msg.message}} in false</p>
+          <span class="time-right">{{msg.date}}</span>
+        </div>
+      </div>
+  </ng-template>
+  
+  <input class="form-control" type="text" placeholder="message" [(ngModel)]="input">
+  <button class="btn btn-success" (click)="sendMessage()">Send</button>
+
+</div>
+-->
+
+
+
+
+
+

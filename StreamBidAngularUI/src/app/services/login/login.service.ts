@@ -18,7 +18,6 @@ doLogin(credentials: any){
 
 //Make call after login
 makeCall(token : any){
-  console.log("in make call after login ",token)
   
   const headers = new HttpHeaders({token: "Bearer "+token})
   return this.http.post(`${this.url}/loginApi`,{headers, responseType: 'text' as 'json'});
@@ -52,7 +51,7 @@ isLoggedIn(){
 
 logout(){
   localStorage.removeItem('token');
-  localStorage.removeItem('ticketId');
+  localStorage.removeItem("Full Name");
   
   return true;
 }

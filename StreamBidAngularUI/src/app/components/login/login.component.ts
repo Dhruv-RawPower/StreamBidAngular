@@ -39,6 +39,8 @@ export class LoginComponent  implements OnInit{
           console.log(response);
 
           this.loginService.loginUser(response.token)
+          
+          localStorage.setItem("Full Name",response.fullName)
           this.loginValid=true;
           window.location.href="dashboard";
         },
