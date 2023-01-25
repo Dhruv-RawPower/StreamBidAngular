@@ -3,7 +3,7 @@
 <script src="assets/js/stomp.min.js"></script>
 <script src="assets/js/scanner.js"></script>
 
-<div class="container-fluid"  role="main" class="colors">
+<div class="container colors"  role="main">
   <h2  *ngIf="messageService.chatUser as user">{{user}}</h2>
 
     <div *ngFor="let msg of messageService.msg">
@@ -13,10 +13,10 @@
     
     
      <ng-template #thenBlock>
-      <div class="container" >
-        <img src="/w3images/bandmember.jpg" alt="Avatar" style="width:100%;">
+      <div class="container " >
+        <img src="/assets/images/Shrek.jpg" alt="Avatar" style="width:100%;">
           <div>
-            <p>{{msg.message}} in true</p>
+            <p>{{msg.message}}</p>
             <span class="time-left">{{msg.date}}</span>
           </div>  
       </div>
@@ -24,9 +24,9 @@
       
       <ng-template #elseBlock>
         <div class="container darker">
-          <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right" style="width:100%;">
+          <img src="/assets/images/keanu.jpg" alt="Avatar" class="right" style="width:100%;">
           <div>
-            <p>{{msg.message}} in false</p>
+            <p>{{msg.message}}</p>
             <span class="time-right">{{msg.date}}</span>
           </div>
         </div>

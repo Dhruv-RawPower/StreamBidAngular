@@ -69,7 +69,6 @@ export class MessageService implements OnInit{
           {
              this.userMessage.mainUser = false;                 
           }
-          console.log('Mirchi Lagi '+ JSON.stringify(this.userMessage )) 
           that.msg.push(this.userMessage);
         }
       });

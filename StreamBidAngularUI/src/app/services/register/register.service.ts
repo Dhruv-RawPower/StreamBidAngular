@@ -14,7 +14,7 @@ constructor(private http: HttpClient) { }
 doRegisteration(credentials: any){
  
  // const headers = new HttpHeaders(})
-  return this.http.post(`${this.url}/saveEmployee`,credentials);
+  return this.http.post(`${this.url}/saveChatUser`,credentials);
 
 }
 }
