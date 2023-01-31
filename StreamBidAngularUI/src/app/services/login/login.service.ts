@@ -44,7 +44,7 @@ isLoggedIn(){
     return false;
   }
   else{
-    console.log("token cool",token);
+    console.log("token ",token);
     return true;
   }
 }
@@ -52,6 +52,8 @@ isLoggedIn(){
 logout(){
   localStorage.removeItem('token');
   localStorage.removeItem("Full Name");
+  localStorage.removeItem("Username");
+  localStorage.removeItem("Password");
   
   return true;
 }

@@ -25,7 +25,11 @@
             <input [(ngModel)]="credentials.email" name="email" required type="text" matInput  />
         </mat-form-field>
 
-       <div class="buttonClass">
+        <mat-label>Upload Profile Photo</mat-label>
+        <input (change)="onFileChange($event)" required  type="file" name="image" accept="image/png, image/jpeg" />
+        
+
+       <div>
           <button type="submit" mat-raised-button color="primary">Sign-Up</button>
           <button type="reset" mat-raised-button color="accent">Reset</button>
        </div>

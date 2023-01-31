@@ -13,8 +13,13 @@ export class DashboardService {
   }
 
   getAllUsers(){
-     const headers = new HttpHeaders({token: "Bearer "+localStorage.getItem("token")})
+     const headers = new HttpHeaders({ 
+      'Authorization': 'Bearer ' + (localStorage.getItem('token'))
+   });
+      
+      //{token: "Bearer "+localStorage.getItem("token")})
     // return this.http.post(`${this.url}/getAllUsers`,{headers, responseType: 'text' as 'json'});
+   
     return this.http.post(`${this.url}/getAllUsers`,'');
    }
 }

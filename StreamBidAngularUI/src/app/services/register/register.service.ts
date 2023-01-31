@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -11,10 +11,17 @@ export class RegisterService {
 constructor(private http: HttpClient) { }
 
 //for login user
-doRegisteration(credentials: any){
+doRegisteration(file:any,credentials: any){
+ console.log('credentials '+JSON.stringify(credentials))
+
+ const formData: FormData = new FormData();
+ formData.append('file', file);
+ formData.append('credentials', JSON.stringify(credentials));
  
  // const headers = new HttpHeaders(})
-  return this.http.post(`${this.url}/saveChatUser`,credentials);
+ //const headers = new HttpHeaders({'Content-Type':'multipart/form-data'});
 
+  return this.http.post(`${this.url}/saveChatUser`,formData);
+  
 }
 }

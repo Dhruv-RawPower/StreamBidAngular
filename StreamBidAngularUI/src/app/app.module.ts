@@ -22,7 +22,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDividerModule} from '@angular/material/divider';
 import { AuthGuard } from './services/auth/auth.guard';
-
+ 
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegisterService } from './services/register/register.service';

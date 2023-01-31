@@ -14,14 +14,14 @@ export class AuthInterceptor implements HttpInterceptor{
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         let newRequest = req;
         let token = this.loginService.getToken();
-        console.log("token in intercept: ",token)
-
+        console.log("token in intercept: ",req)
+        
         if(token!=null)
         {   
             console.log("In if of interceptor")
-            newRequest =  newRequest.clone({setHeaders:{Authorization : `Bearer ${token}`}})
+            newRequest =  newRequest.clone({setHeaders:{'Authorization' : `Bearer ${token}`}})
         } 
-
+        console.log("new req ",newRequest)
         return next.handle(newRequest);
     }
 

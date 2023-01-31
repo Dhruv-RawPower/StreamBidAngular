@@ -22,8 +22,13 @@ export class RegisterComponent implements OnInit{
       password : '',
       email:'',
       firstName:'',
-      lastName:''
+      lastName:'',
+      imageUrl:''
   }
+
+
+  file!: File;
+  fileUris: Array<string> = [];
 
   loginValid = true;
 
@@ -35,11 +40,17 @@ export class RegisterComponent implements OnInit{
     console.log("form is submitted");
     if((this.credentials.userName!="" && this.credentials.password!="") && (this.credentials.userName!=null && this.credentials.password!=null ))
     {
-      console.log("Credentials are ok, api call made");
-      this.registerService.doRegisteration(this.credentials).subscribe(
+      
+      
+      console.log("Credentials are ok, api call made",this.credentials);
+      
+      
+
+      
+      this.registerService.doRegisteration(this.file,this.credentials).subscribe(
         (response:any)=>{
           console.log("Successful")
-          //window.location.href="dashboard";
+          window.location.href="login";
         },
         error=>{
           this.loginValid = false;
@@ -56,6 +67,15 @@ export class RegisterComponent implements OnInit{
       console.log("Credentials are missing");
     }
 
+  }
+
+  onFileChange(evt): void {
+    console.log('contents of file')
+    console.log( evt.target.files[0]);
+
+    this.file = evt.target.files.item(0);
+
+    
   }
 
 }

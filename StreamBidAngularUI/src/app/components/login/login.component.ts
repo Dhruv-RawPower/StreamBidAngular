@@ -36,17 +36,18 @@ export class LoginComponent  implements OnInit{
       this.loginService.doLogin(this.credentials).subscribe(
         (response:any)=>{
           
-          console.log(response);
-
-          this.loginService.loginUser(response.token)
           
+          this.loginService.loginUser(response.token)
+          localStorage.setItem("Username",this.credentials.username)
+          localStorage.setItem("Password",this.credentials.password)
           localStorage.setItem("Full Name",response.fullName)
+          localStorage.setItem("Image URL",response.imageUrl)
           this.loginValid=true;
           window.location.href="dashboard";
         },
         error=>{
           //this.loginValid = false;
-          console.log("error hai re");
+          console.log("error");
           
         }
       );

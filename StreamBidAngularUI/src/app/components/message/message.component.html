@@ -3,8 +3,10 @@
 <script src="assets/js/stomp.min.js"></script>
 <script src="assets/js/scanner.js"></script>
 
-<div class="container colors"  role="main">
-  <h2  *ngIf="messageService.chatUser as user">{{user}}</h2>
+<h2> Stream Bid Chat Application </h2>
+
+<div class="container d-flex justify-content-center align-items-center size" role="main" >
+  
 
     <div *ngFor="let msg of messageService.msg">
     <div *ngIf="msg.mainUser; then thenBlock else elseBlock">
@@ -13,8 +15,10 @@
     
     
      <ng-template #thenBlock>
-      <div class="container " >
-        <img src="/assets/images/Shrek.jpg" alt="Avatar" style="width:100%;">
+      <div class="container" >
+        
+        <img src={{msg.imageUrl}} alt="Avatar" style="width:100%;">
+        <span class="time-left">{{msg.fullName}}</span>
           <div>
             <p>{{msg.message}}</p>
             <span class="time-left">{{msg.date}}</span>
@@ -24,7 +28,8 @@
       
       <ng-template #elseBlock>
         <div class="container darker">
-          <img src="/assets/images/keanu.jpg" alt="Avatar" class="right" style="width:100%;">
+          <img src={{msg.imageUrl}} alt="Avatar" class=" right" style="width:100%;">
+          <span class="time-right">{{msg.fullName}}</span>
           <div>
             <p>{{msg.message}}</p>
             <span class="time-right">{{msg.date}}</span>

@@ -4,7 +4,8 @@
     text-align: center;
     box-sizing: border-box;
     border: 1px solid;
-    background: lightcoral;
+    border-radius: 10px;
+    background: rgb(226, 170, 132);
 }
 
 form{
@@ -19,14 +20,18 @@ mat-form-field {
 button{
    /* display: block;
     width: 30%; */
-                         
-    border-radius: 30px;
-    background: linear-gradient(to right, rgba(249, 0, 104, 1) 0%, rgba(247, 117, 24, 1) 100%);
-    background: -webkit-linear-gradient(left, rgba(249, 0, 104, 1) 0%, rgba(247, 117, 24, 1) 100%)
+    padding: 20px;                  
+    border-radius: 10px;
+    
+    margin: 8px 6px;
+    background: rgb(132, 188, 226) !important;
+    opacity: 0.6;
+  
 }
-.buttonClass{
-    text-align: center;   
-}
+button:hover {
+    opacity: 1 !important;
+  }
+
 
 .fab {
     padding: 15px;
