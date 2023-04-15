@@ -30,6 +30,8 @@ export class DashboardComponent implements OnInit{
 
     this.id = localStorage.getItem("ticketId");
 
+    console.log('image url' + localStorage.getItem("Image URL"));
+
     console.log("ID: ",this.id);  
     this.dashboardService.getAllUsers().subscribe(
 

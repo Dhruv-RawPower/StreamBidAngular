@@ -75,7 +75,7 @@ export class RegisterComponent implements OnInit{
 
     this.file = evt.target.files.item(0);
 
-    
+    this.credentials.imageUrl = '/assets/images/'+evt.target.files.item(0).name;
   }
 
 }

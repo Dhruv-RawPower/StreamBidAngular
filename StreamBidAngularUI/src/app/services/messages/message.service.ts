@@ -4,13 +4,7 @@ import { Subject } from 'rxjs';
 import * as SockJS from 'sockjs-client';
 
 declare var Stomp;
-/* 
-export interface ChatBox {
-  fullName: string;
-  message: string;
-  date: string;
-  mainUser: boolean;
-}*/
+
 
 
 

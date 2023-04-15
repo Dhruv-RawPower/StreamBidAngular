@@ -12,7 +12,7 @@ export class MessageComponent implements OnInit{
   title = 'websocket-frontend';
   
   
-  
+
 
   input;
   constructor(public messageService: MessageService) {

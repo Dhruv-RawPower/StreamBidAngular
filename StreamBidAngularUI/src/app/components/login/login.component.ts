@@ -42,6 +42,7 @@ export class LoginComponent  implements OnInit{
           localStorage.setItem("Password",this.credentials.password)
           localStorage.setItem("Full Name",response.fullName)
           localStorage.setItem("Image URL",response.imageUrl)
+          
           this.loginValid=true;
           window.location.href="dashboard";
         },

@@ -54,6 +54,9 @@ logout(){
   localStorage.removeItem("Full Name");
   localStorage.removeItem("Username");
   localStorage.removeItem("Password");
+  localStorage.removeItem("Image URL");
+  localStorage.removeItem("Main User");
+  localStorage.removeItem("userId");
   
   return true;
 }
