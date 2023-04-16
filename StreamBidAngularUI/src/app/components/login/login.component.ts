@@ -47,7 +47,7 @@ export class LoginComponent  implements OnInit{
           window.location.href="dashboard";
         },
         error=>{
-          //this.loginValid = false;
+          this.loginValid = false;
           console.log("error");
           
         }

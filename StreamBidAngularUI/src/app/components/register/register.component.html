@@ -1,5 +1,5 @@
 <div class = "container">
-    <form (ngSubmit)="onSubmit()">
+    <form  (ngSubmit)="onSubmit()" >
        <mat-form-field class="full-width" appearance="fill">
           <mat-label>Username</mat-label>
           <input [(ngModel)]="credentials.userName" name="userName" required type ="text" matInput  />
@@ -7,7 +7,8 @@
     
        <mat-form-field class="full-width" appearance="fill">
         <mat-label>Password</mat-label>
-        <input [(ngModel)]="credentials.password" name="password" required type="password" matInput  />
+        <input [(ngModel)]="credentials.password" name="password" required  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,30}$"
+        [class.is-invalid]="!validatePassword(credentials.password) && (credentials.password && credentials.password.length > 0)"  type="text" matInput  />
        </mat-form-field>
 
        <mat-form-field class="full-width" appearance="fill">
@@ -22,15 +23,25 @@
 
         <mat-form-field class="full-width" appearance="fill">
             <mat-label>Email</mat-label>
-            <input [(ngModel)]="credentials.email" name="email" required type="text" matInput  />
+            <input [(ngModel)]="credentials.email" name="email" required type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            [class.is-invalid]="!validateEmail(credentials.email) && (credentials.email && credentials.email.length > 0)"
+            matInput  />
         </mat-form-field>
 
         <mat-label>Upload Profile Photo</mat-label>
         <input (change)="onFileChange($event)" required  type="file" name="image" accept="image/png, image/jpeg" />
         
+       <div class="invalid-feedback" *ngIf="!validatePassword(credentials.password) && (credentials.password && credentials.password.length > 0)">
+         Password must contain at least 1 uppercase letter, 1 lowercase letter,
+         1 number, 1 special character, and be between 8 and 30 characters.
+       </div>
+
+       <div class="invalid-feedback" *ngIf="!validateEmail(credentials.email) && (credentials.email && credentials.email.length > 0)">
+         Please enter a valid email address.
+       </div>
 
        <div>
-          <button type="submit" mat-raised-button color="primary">Sign-Up</button>
+          <button type="submit" mat-raised-button color="primary"[disabled]="!validateEmail(credentials.email)"  [disabled]="!validatePassword(credentials.password)">Sign-Up</button>
           <button type="reset" mat-raised-button color="accent">Reset</button>
        </div>
        

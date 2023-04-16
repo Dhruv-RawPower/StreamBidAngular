@@ -3,14 +3,30 @@ import { faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-
 import { faFaceFrown } from '@fortawesome/free-solid-svg-icons';
 import { RegisterService } from 'src/app/services/register/register.service';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit{
+ 
 
-  constructor(private registerService: RegisterService) { }
+  validatePassword(password: string): boolean {
+    // Implement password validation logic here
+    const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,30}$/;
+    return pattern.test(password);
+  }
+  
+  validateEmail(email: string): boolean {
+    // Implement email validation logic here
+    const pattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
+    return pattern.test(email);
+  }
+
+  constructor(private registerService: RegisterService) { 
+    
+  }
 
   faFacebook = faFacebook;
   faTwitter = faTwitter;

@@ -1,14 +1,33 @@
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 
+
 .example-spacer{
     flex : 1 1 auto;
   }
   
+  .navbar-brand{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: larger;
+
+  }
   
-  
+  a:link { text-decoration: none; color: yellow;}
+
+
+  a:visited { text-decoration: none; color: yellow;}
+
+
+  a:hover { text-decoration: none; color: yellow;}
+
+
+  a:active { text-decoration: none; color: yellow;}
+
   .mat-toolbar {
     background: black;
-    color: #fff
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
   
   .fire {

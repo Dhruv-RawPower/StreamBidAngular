@@ -1,21 +1,35 @@
 .container{
-    max-width: 400px;
-    margin: 2em auto;
+    max-width: 800px;
+    height: 600px; 
+    margin: 5em auto;
     text-align: center;
     box-sizing: border-box;
     border: 1px solid;
     border-radius: 10px;
-    background: rgb(226, 170, 132);
+    background: rgb(12, 58, 2);
 }
+mat-form-field {
+    padding-top: 15%;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: larger;
+    color: yellow;
+    display: block;
+ }
 
+input {
+    color: AliceBlue;
+    font-family:'Times New Roman', Times, serif !important;
+    font:italic !important;
+ }
 form{
-    padding: 5%;
+    padding: 8%;
     margin: 5%;
     border:5%;
 }
-mat-form-field {
-    display: block;
-}
+
+
+
+
 
 button{
    /* display: block;

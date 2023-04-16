@@ -14,14 +14,13 @@
           <button type="reset" mat-raised-button >Reset</button>
        </div>
        <div  style="text-align: center; padding: 2%;"> 
-             <a href="#"><fa-icon [icon]="faFacebook" class="fab fa-facebook"></fa-icon></a> 
-             <a href="#"><fa-icon [icon]="faTwitter" class="fab fa-twitter"></fa-icon></a> 
-             <a href="#"><fa-icon [icon]="faLinkedin" class="fab fa-linkedin"></fa-icon></a> 
-             
+             <a href="https://www.facebook.com/" target="_blank"><fa-icon [icon]="faFacebook" class="fab fa-facebook"></fa-icon> </a> 
+             <a href="https://www.twitter.com/?lang=en" target="_blank"><fa-icon [icon]="faTwitter" class="fab fa-twitter"></fa-icon></a> 
+             <a href="https://www.linkedin.com/in/dhruvshah09/" target="_blank"><fa-icon [icon]="faLinkedin" class="fab fa-linkedin"></fa-icon></a> 
        </div>
-       
+       <span>Don't have an account? Sign Up here.</span>
        <mat-error *ngIf="!loginValid">
           The username or password were not recognized.<fa-icon [icon]="faFaceFrown" class="fab fa-faFaceFrown"></fa-icon>
        </mat-error>   
     </form>
-    </div>
+</div>

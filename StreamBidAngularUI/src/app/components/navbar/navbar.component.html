@@ -1,12 +1,12 @@
 
 
 <mat-toolbar  color="primary">
-    <span  routerLink="/">Stream<img src="/assets/images/Capture.PNG" class="navbarImage">bid</span>
+    <span  routerLink="/"><img src="/assets/images/JohnCena.jpeg" class="navbarImage"></span>
+    <a class="navbar-brand" href="#">Dhruv's Chat Website</a>
     <ng-container *ngFor="let item of menuItems">
       <button mat-button  
         id = "{{item.id}}"
-        *ngIf = "item.logged"
-        
+        *ngIf = "item.logged"        
         routerLink="{{item.path}}"
         class="mr fire"
         (click)="item.function">
@@ -29,7 +29,6 @@
   
   
   
-  
     <ng-container>
         <button mat-icon-button [matMenuTriggerFor]="dropMenu">
             <mat-icon>more_vert</mat-icon>
@@ -47,3 +46,4 @@
         </mat-menu>
     </ng-container>
   </mat-toolbar>
+
